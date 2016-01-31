@@ -1,12 +1,3 @@
-# CleanData
-repository for coursework with Getting and Cleaning Data Course Project
-The runanalysis.R script (listed below) creates one tidy dataset from a number of files.  The raw data is inertia signals  from Smartphones worn by 30 volunteers during various activities, e.g. walking, resting. Researchers summarized the raw data in a data set that provided 561 variables.    The files provided listed the volunteers by number which was combined with the activity file and variables for both test and training datasets.  The runanalysis script extracts mean and standard deviation calculations from the data set.  
-
-The runanalysis script uses the functions in two packages, dplyr and reshape2.  The script reads data from 8 files.  Two files, features.txt and activity_labels.txt, are character labels for the 561 variables and the six different activities.  The subjects are numbered 1-30 that the researchers randomly assigned to two groups, test and train.  Of the 561, only 66 contain the mean or standard deviation.  The script extracts  these 66 columns.   The script creates one large data file with the subject number, the activity labels, the 66 variables.  Many observations are in the data for each subject-activity.  These are filtered from the data set and averaged (mean).
-
-
-
- 
 library(dplyr)
 xtest <- read.table("test/X_test.txt",sep = "")  ## read in obervations for the test group
 features <- read.table("features.txt", sep = "")  ## read in variable names
